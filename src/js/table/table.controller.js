@@ -7,6 +7,7 @@ class TableCtrl {
 		'ngInject';
 
 		this.appName = AppConstants.appName;
+		this.coveredcalls = AppConstants.MOCKCOVEREDCALLAPI;
 	}
 
 
