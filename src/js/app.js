@@ -12,7 +12,7 @@ import 'angular-ui-router';
 import './config/app.templates';
 import './layout';
 import './components';
-import './home';
+import './table';
 import './services';
 
 const requires = [
@@ -20,7 +20,7 @@ const requires = [
 	'templates',
 	'app.layout',
 	'app.components',
-	'app.home',
+	'app.table',
 	'app.services'
 ];
 
@@ -32,6 +32,6 @@ angular.module('app').config(appConfig);
 
 angular.module('app').run(appRun);
 
-angular.boostrap(document, ['app'], {
+angular.bootstrap(document, ['app'], {
 	strictDi: true
 });

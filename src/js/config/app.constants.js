@@ -1,7 +1,7 @@
 'use strict';
 const AppConstants = {
 	api: 'apilink',
-	appName: 'POC'
+	appName: 'livevolpro.com POC'
 };
 
 export default AppConstants;
