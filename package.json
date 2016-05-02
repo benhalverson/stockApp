@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Ben Halverson",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular": "1.5.5",
     "angular-ui-router": "^0.2.17",

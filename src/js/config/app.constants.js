@@ -1,7 +1,8 @@
 'use strict';
 const AppConstants = {
-	api: 'apilink',
-	appName: 'livevolpro.com POC'
+	COVEREDCALLAPI: 'http://dev.etrade.api.livevol.com/v1/market/scans/options/cashed-secured-puts',
+	appName: 'livevolpro.com POC',
+	MOCKCOVEREDCALLAPI: '../js/services/coveredcall.json'
 };
 
 export default AppConstants;
