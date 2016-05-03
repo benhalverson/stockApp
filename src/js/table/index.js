@@ -11,4 +11,7 @@ tableModule.config(TableConfig);
 import TableCtrl from './table.controller';
 tableModule.controller('TableCtrl', TableCtrl);
 
+import CoveredCall from '../services/coveredcall.service';
+tableModule.service('CoveredCall', CoveredCall);
+
 export default tableModule;
