@@ -11,12 +11,12 @@ class TableCtrl {
 		// this.coveredcalls = AppConstants.COVEREDCALLAPI;
 		this.mockcoveredcalls = AppConstants.MOCKCOVEREDCALLAPI;
 		this.coveredcalls = $state.current.data.coveredCalls.output;
+		this.inputs = $state.current.data.coveredCalls.inputs;
 		console.log('log message from table controller');
 		// console.log('API Token Endpoint', this.getToken);
 		console.log('API Covered Calls Endpoint', this.mockcoveredcalls);
-		// console.log('$state data: ', $state.current.data.coveredCalls.output);
-		// console.log('$state data: ', $state.current.data.coveredCalls.output[0].stock_price);
 		console.log('this.coveredcalls: ', this.coveredcalls);
+		console.log('input defaults for covered calls', this.inputs);
 	}
 	getData() {
 		console.log('Clicked');
