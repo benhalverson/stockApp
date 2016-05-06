@@ -3,7 +3,7 @@
  */
 'use strict';
 class TableCtrl {
-	constructor(AppConstants, $state) {
+	constructor(AppConstants, $state, CoveredCall) {
 		'ngInject';
 
 		this.appName = AppConstants.appName;
@@ -19,7 +19,10 @@ class TableCtrl {
 		console.log('input defaults for covered calls', this.inputs);
 	}
 	getData() {
-		console.log('Clicked');
+		return coveredCalls.geToken().then(
+			(token) => token,
+			(err) => err
+		)
 	}
 
 }

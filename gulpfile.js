@@ -5,6 +5,7 @@ var browserify    = require('browserify');
 var babelify      = require('babelify');
 var ngAnnotate    = require('browserify-ngannotate');
 var browserSync   = require('browser-sync').create();
+var sourcemaps    = require('gulp-sourcemaps');
 var rename        = require('gulp-rename');
 var templateCache = require('gulp-angular-templatecache');
 var uglify        = require('gulp-uglify');
@@ -64,8 +65,9 @@ gulp.task('build', ['html', 'browserify'], function() {
 
 	var js = gulp.src("build/main.js")
 		.pipe(uglify())
-		.pipe(gulp.dest('./dist/'));
-
+		.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(gulp.dest('./dist/'))
+		.pipe(sourcemaps.write('./dist'));
 	return merge(html,js);
 });
 
@@ -83,4 +85,17 @@ gulp.task('default', ['html', 'browserify'], function() {
 	gulp.watch("src/index.html", ['html']);
 	gulp.watch(viewFiles, ['views']);
 	gulp.watch(jsFiles, ['browserify']);
+});
+
+
+gulp.task('prod', ['html', 'browserify'], function() {
+
+	browserSync.init(['./dist/**/**.**'], {
+		server: "./dist",
+		port: 9000,
+		notify: false,
+		ui: {
+			port: 9001
+		}
+	});
 });

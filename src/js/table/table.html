@@ -20,19 +20,19 @@
                 <tr ng-repeat="data in $ctrl.coveredcalls">
 
 
-                    <td ng-bind="data.symbol | uppercase"></td>
-                    <td ng-bind="data.stock_price"></td>
-                    <td ng-bind="data.hi_lo_percent_52_week | number:2"></td>
-                    <td ng-bind="data.expiry | date : shortDate"></td>
-                    <td ng-bind="data.strike"></td>
-                    <td ng-bind="data.option_bid"></td>
-                    <td ng-bind="data.strike_percent_otm | number:2"></td>
-                    <td ng-bind="data.next_ex_date | date : shortDate"></td>
-                    <td ng-bind="data.projected_dividends"></td>
-                    <td ng-bind="data.stand_still_return_percent | number:2"></td>
-                    <td ng-bind="data.if_called_return_percent | number:2"></td>
-                    <td ng-bind="data.hv30 | number:2"></td>
-                    <td ng-bind="data.industry_code"></td>
+                    <td ng-bind="::data.symbol | uppercase"></td>
+                    <td ng-bind="::data.stock_price"></td>
+                    <td ng-bind="::data.hi_lo_percent_52_week | number:2"></td>
+                    <td ng-bind="::data.expiry | date : shortDate"></td>
+                    <td ng-bind="::data.strike"></td>
+                    <td ng-bind="::data.option_bid"></td>
+                    <td ng-bind="::data.strike_percent_otm | number:2"></td>
+                    <td ng-bind="::data.next_ex_date | date : shortDate"></td>
+                    <td ng-bind="::data.projected_dividends"></td>
+                    <td ng-bind="::data.stand_still_return_percent | number:2"></td>
+                    <td ng-bind="::data.if_called_return_percent | number:2"></td>
+                    <td ng-bind="::data.hv30 | number:2"></td>
+                    <td ng-bind="::data.industry_code"></td>
                 </tr>
             </tbody>
         </table>
