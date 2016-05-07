@@ -2,16 +2,16 @@
     <div class="col-md-12">
         <form ng-submit="$ctrl.submitForm()">
             <input type="text" placeholder="Symbols" ng-model="$ctrl.formData.symbol" />
-            <input type="number" placeholder="Strike" ng-model="$ctrl.formdata.strike"/>
-            <input type="number" placeholder="Option Bid Price" ng-model="$ctrl.formdata.optionBidPrice"/>
-            <input type="number" placeholder="Stand Still Return" ng-model="$ctrl.formdata.standStillReturn"/>
+            <input type="number" placeholder="Strike" ng-model="$ctrl.formdata.strikePrice"/>
+            <input type="number" placeholder="Option Bid Price" ng-model="$ctrl.formdata.optionBid"/>
+            <input type="number" placeholder="Stand Still Return" ng-model="$ctrl.formdata.standStillReturnPercent"/>
             <input type="number" placeholder="Stock Price (min)" ng-model="$ctrl.formdata.stockPriceMin"/>
             <input type="number" placeholder="Stock Price (max)" ng-model="$ctrl.formdata.stockPriceMax"/>
-            <input type="number" placeholder="52wk Hi-Lo (min)" ng-model="$ctrl.formdata.52wkMin"/>
-            <input type="number" placeholder="52wk Hi-Low (max)" ng-model="$ctrl.formdata.52wkMax"/>
+            <input type="number" placeholder="52wk Hi-Lo (min)" ng-model="$ctrl.formdata"/>
+            <input type="number" placeholder="52wk Hi-Low (max)" ng-model="$ctrl.formdata"/>
             <button class="btn btn-lg btn-primary pull-xs-right"
                     type="submit" >
-                    Refresh
+                    Submit
             </button>
         </form>
     </div>

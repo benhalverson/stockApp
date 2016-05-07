@@ -7,15 +7,15 @@ function SearchConfig($stateProvider) {
 
 	$stateProvider
 		.state('app.search', {
-			url: '/search',
+			url: '/',
 			views: {
-				'search': {
+				'filter': {
 					controller: 'SearchCtrl',
 					controllerAs: '$ctrl',
-					templateUrl: './search/search.html'
+					templateUrl: 'search/search.html'
 				}
 			}
 		});
-};
+}
 
 export default SearchConfig;

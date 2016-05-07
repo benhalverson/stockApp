@@ -15,17 +15,16 @@ function TableConfig($stateProvider) {
 					controllerAs: '$ctrl',
 					templateUrl: 'table/table.html'
 				}
+				// 'search': {
+				// 	controller: 'SearchCtrl',
+				// 	controllerAs: '$ctrl',
+				// 	templateUrl: '../search/search.html'
+				//
+				// }
 			}
 
-		})
-		.state('app.error', {
-			url: '/error',
-			controller: 'TableCtrl',
-			controllerAs: '$ctrl',
-			template: '<h1> An Error has occured. </h1><br> <p>Please check the logs</p>',
-			title: 'Error'
 		});
 
-};
+}
 
 export default TableConfig;

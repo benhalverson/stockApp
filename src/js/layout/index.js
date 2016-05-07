@@ -1,6 +1,7 @@
 import angular from 'angular';
 
 let layoutModule = angular.module('app.layout', []);
+console.log('index layout module');
 
 import AppHeader from './header.component';
 layoutModule.component('appHeader', AppHeader);
