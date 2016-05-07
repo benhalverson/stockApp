@@ -13,5 +13,6 @@ tableModule.controller('TableCtrl', TableCtrl);
 
 import CoveredCall from '../services/coveredcall.service';
 tableModule.service('CoveredCall', CoveredCall);
+console.log('Table Ctrl imports');
 
 export default tableModule;

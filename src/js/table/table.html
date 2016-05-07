@@ -17,34 +17,36 @@
                 <th>Industry</th>
             </thead>
             <tbody>
-                <tr ng-repeat="data in $ctrl.coveredcalls">
+                <tr ng-repeat="data in $ctrl._CoveredCall._data.data.data.coveredCallScanner.strategyInfoList | limitTo:10 track by $index ">
 
 
                     <td ng-bind="::data.symbol | uppercase"></td>
-                    <td ng-bind="::data.stock_price"></td>
-                    <td ng-bind="::data.hi_lo_percent_52_week | number:2"></td>
+                    <td ng-bind="::data.stockPrice"></td>
+                    <td ng-bind="::data.hiLoPercent52Week | number:2"></td>
                     <td ng-bind="::data.expiry | date : shortDate"></td>
-                    <td ng-bind="::data.strike"></td>
-                    <td ng-bind="::data.option_bid"></td>
-                    <td ng-bind="::data.strike_percent_otm | number:2"></td>
-                    <td ng-bind="::data.next_ex_date | date : shortDate"></td>
-                    <td ng-bind="::data.projected_dividends"></td>
-                    <td ng-bind="::data.stand_still_return_percent | number:2"></td>
-                    <td ng-bind="::data.if_called_return_percent | number:2"></td>
+                    <td ng-bind="::data.strikePrice"></td>
+                    <td ng-bind="::data.optionBid"></td>
+                    <td ng-bind="::data.strikePercentOtm | number:2"></td>
+                    <td ng-bind="::data.nextExpirationDate | date : shortDate"></td>
+                    <td ng-bind="::data.projectedDividends"></td>
+                    <td ng-bind="::data.standStillReturnPercent | number:2"></td>
+                    <td ng-bind="::data.ifCalledReturnPercent | number:2"></td>
                     <td ng-bind="::data.hv30 | number:2"></td>
-                    <td ng-bind="::data.industry_code"></td>
+                    <td ng-bind="::data.industryCode"></td>
                 </tr>
             </tbody>
         </table>
-        <!--<pre>-->
-            <!--{{ $ctrl.coveredcalls | json}}-->
-        <!--</pre>-->
+
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="btn btn-primary" ng-click="getData()">Get data</div>
+            <div class="btn btn-primary" ng-click="$ctrl.getData()">Get data</div>
         </div>
     </div>
+
+    <pre>
+        {{ $ctrl._CoveredCall._data.data.data.coveredCallScanner.strategyInfoList | json }}
+    </pre>
 </div>
 
 {{}}

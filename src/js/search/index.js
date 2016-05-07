@@ -10,5 +10,6 @@ searchModule.config(SearchConfig);
 
 import SearchCtrl from './search.controller';
 searchModule.controller('SearchCtrl', SearchCtrl);
+console.log('Search Ctrl imports');
 
 export default searchModule;

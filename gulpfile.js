@@ -37,8 +37,10 @@ gulp.task('browserify', ['views'], function() {
 		.on('error', interceptErrors)
 		//Pass desired output filename to vinyl-source-stream
 		.pipe(source('main.js'))
+		// .pipe(sourcemaps.init({loadMaps: true}))
 		// Start piping stream to tasks!
-		.pipe(gulp.dest('./build/'));
+		.pipe(gulp.dest('./build/'))
+		// .pipe(sourcemaps.write('./build/'));
 });
 
 gulp.task('html', function() {
