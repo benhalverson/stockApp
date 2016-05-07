@@ -9,7 +9,7 @@ function SearchConfig($stateProvider) {
 		.state('app.search', {
 			url: '/',
 			views: {
-				'filter': {
+				'search': {
 					controller: 'SearchCtrl',
 					controllerAs: '$ctrl',
 					templateUrl: 'search/search.html'
