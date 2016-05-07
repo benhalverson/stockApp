@@ -8,12 +8,23 @@ function TableConfig($stateProvider) {
 	$stateProvider
 		.state('app.table', {
 			url: '/',
-			controller: 'TableCtrl',
-			controllerAs: '$ctrl',
-			templateUrl: 'table/table.html',
-			title: 'Table data'
+			title: 'Table data',
+			views: {
+				'table': {
+					controller: 'TableCtrl',
+					controllerAs: '$ctrl',
+					templateUrl: 'table/table.html'
+				}
+				// 'search': {
+				// 	controller: 'SearchCtrl',
+				// 	controllerAs: '$ctrl',
+				// 	templateUrl: '../search/search.html'
+				//
+				// }
+			}
+
 		});
 
-};
+}
 
 export default TableConfig;

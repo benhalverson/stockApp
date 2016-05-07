@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
   },
   "author": "Ben Halverson",
   "license": "MIT",
@@ -20,10 +21,11 @@
     "gulp-angular-templatecache": "^1.8.0",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "marked": "^0.3.5",
-    "vinyl-source-stream": "^1.1.0",
-    "gulp-uglify": "^1.5.3",
-    "merge-stream": "^1.0.0"
+    "merge-stream": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

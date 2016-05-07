@@ -1,0 +1,42 @@
+[
+  {
+    "code": 50,
+    "name": "Energy"
+  },
+  {
+    "code": 51,
+    "name": "Basic Materials"
+  },
+  {
+    "code": 52,
+    "name": "Industrials"
+  },
+  {
+    "code": 53,
+    "name": "Consumer Cyclicals"
+  },
+  {
+    "code": 54,
+    "name": "Consumer Non-Cyclicals"
+  },
+  {
+    "code": 55,
+    "name": "Financials"
+  },
+  {
+    "code": 56,
+    "name": "Healthcare"
+  },
+  {
+    "code": 57,
+    "name": "Technology"
+  },
+  {
+    "code": 58,
+    "name": "Telecommunication Services"
+  },
+  {
+    "code": 59,
+    "name": "Utilities"
+  }
+]

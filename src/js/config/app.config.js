@@ -1,4 +1,3 @@
-'use strict';
 function AppConfig($httpProvider, $stateProvider, $locationProvider, $urlRouterProvider) {
 	'ngInject';
 
