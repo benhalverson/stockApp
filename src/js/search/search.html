@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <form ng-submit="$ctrl.submitForm()">
+        <form>
             <input type="text" placeholder="Symbols" ng-model="$ctrl.formData.symbol" />
             <input type="number" placeholder="Strike" ng-model="$ctrl.formdata.strikePrice"/>
             <input type="number" placeholder="Option Bid Price" ng-model="$ctrl.formdata.optionBid"/>
@@ -10,7 +10,7 @@
             <input type="number" placeholder="52wk Hi-Lo (min)" ng-model="$ctrl.formdata"/>
             <input type="number" placeholder="52wk Hi-Low (max)" ng-model="$ctrl.formdata"/>
             <button class="btn btn-lg btn-primary pull-xs-right"
-                    type="submit" >
+                    type="submit" ng-click="$ctrl.submitForm()">
                     Submit
             </button>
         </form>

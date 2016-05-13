@@ -14,16 +14,7 @@ class SearchCtrl {
 		this.isSubmitting = true;
 		
 		console.log('Form data: ', this.formData);
-		this._CoveredCall.postData(this.formData).then(
-			(res) => {
-				this.isSubmitting = false;
-			},
-			(err) => {
-				this.isSubmitting = false;
-				console.log('Error: ', err );
-				this.errors = err;
-			}
-		);
+		this._CoveredCall.postData(this.formData)
 	}
 }
 
