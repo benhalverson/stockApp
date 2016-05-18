@@ -5,33 +5,14 @@
 class TableCtrl {
 	constructor(AppConstants, $state, CoveredCall) {
 		'ngInject';
-		this.api = AppConstants.api;
-		this.appName = AppConstants.appName;
 		this._CoveredCall = CoveredCall;
-
-
-		console.log ('log message from table controller');
-
-		console.log ('API Covered Calls Endpoint', this.api);
-
-		console.log('Table $ctrl this: ', this);
-
-
-
+		this._mockdata = CoveredCall;
 	}
 
-	getData ()
-	{
-		console.log('clicked');
-		// this._CoveredCall.getJSON().then(
-		// 	(res) => {
-		// 		console.log('response: ', res)
-		// 	},
-		// 	(err) => {
-		// 		console.log('Error: ', err)
-		// 	}
-		// )
-		this._CoveredCall.getJSON();
+	getData () {
+		this._CoveredCall.getJSON().then(res => this.items = res);
+		//console.log('JSON: ', this._CoveredCall.getJSON());
+		// console.log('Mockdata: ', this._mockdata);
 	}
 
 }

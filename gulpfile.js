@@ -78,7 +78,10 @@ gulp.task('default', ['html', 'browserify'], function() {
 	browserSync.init(['./build/**/**.**'], {
 		server: "./build",
 		port: 4000,
-		notify: false,
+		notify: true,
+		host: 'mymacbookpro.etrade.com',
+		open: 'local',
+		logLevel: 'debug',
 		ui: {
 			port: 4001
 		}
