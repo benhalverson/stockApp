@@ -8,57 +8,89 @@ export default class CoveredCall {
 		this._$http = $http;
 		// Object to store coveredcalls
 		this._mockdata= AppConstants.api;
+		// this._$log = $log;
 		this._userData = null;
+		this._obj = {
+			"value": {
+				"stockPriceMin": "10",
+				"stockPriceMax": "20"
+			}
+		}
 
 	}
 
 	//Get data from api
 
 	getJSON() {
-		this._$http({
-			method: 'POST',
-			url: this._mockdata,
-			settings: {
-				crossDomain: true,
-				async: true
-			},
-			// options: {
-			// 	'Access-Control-Allow-Origin': 'mymacbookpro.etrade.com',
-			// 	"content-type": "application/json",
-			// 	'Access-Control-Request-Method': 'POST'
-			// },
-			headers: {
-				'stk1': 'NetTRKuWWQv+b5i6/oUumTWg+UqNiGLisUhI4qGFZGYyYDUHd2ncYfzr+gWvRQoviLNNfw==',
-				'Access-Control-Allow-Origin': 'mymacbookpro.etrade.com',
-				"content-type": "application/json",
-				'Access-Control-Request-Method': 'GET',
-				'Access-Control-Allow-Credentials': true
-			}
-			// ,
-			// data: {
-			// 	'stockPriceMin': '10',
-			// 	'stockPriceMax': '20'
-			// }
 
-		}).then(
+		var reqData = new Object({
+			"value": {
+				"stockPriceMin": "10",
+				"stockPriceMax": "20"
+			}
+		});
+
+
+		return this._$http.post(this._mockdata, reqData, {withCredentials: true}, {'Content-Type': 'application/json;charset=UTF-8'}).then(
 			(res) => {
-				this.data = res;
-				console.log('data from service: ', this.data.data.data.coveredCallScanner);
+				// this._$log.debug('data', this);
+				// this.data = res;
+				console.debug(res);
+				console.log('success');
+				//console.log('data from service: ', this.data.data.data.coveredCallScanner);
+				return {};
+				// console.log('res: ', res)
 			},
 			(err) => {
-				console.log('Config Object', err.config);
-				console.log('Config Headers', err.config.headers);
-				console.log('Method', err.config.method);
-				console.log('Error data', err.config.data);
+				// console.log('Config Object', err.config);
+				console.log('Failed');
+				// console.log('Config Headers', err.config.headers);
+				//console.log('Method', err.config.method);
+				console.log('Error data', err);
+
 			}
-		)
+		);
+
+
+		// return this._$http({
+		// 	method: 'POST',
+		// 	url: this._mockdata,
+		// 	data: reqData,
+		// 	headers: {
+		// 		// "content-type": "application/x-www-form-urlencoded",
+		// 		// 'Access-Control-Request-Method': 'POST',
+		// 		'Content-Type': 'application/json'
+		// 		//'stk1': 'ssbd3kZzFFcwMbOe8CzIfC9IeXzvtUcvjx32/ZnKf6ahPq8wnmucfyS/vmA6zlkUGRNhbQ=='
+		// 		// "Authorization": "Basic YmhhbHZlcnM6TWFyaW5lODI="
+		// 		// "Access-Control-Allow-Origin": "*.etrade.com",
+		// 	}
+		// }).then(
+		// 	(res) => {
+		// 		// this._$log.debug('data', this);
+		// 		// this.data = res;
+		// 		console.log('data from service: ', this.data.data.data.coveredCallScanner);
+		// 		return {};
+		// 		// console.log('res: ', res)
+		// 	},
+		// 	(err) => {
+		// 		// console.log('Config Object', err.config);
+		// 		console.log('new test');
+		// 		// console.log('Config Headers', err.config.headers);
+		// 		console.log('Method', err.config.method);
+		// 		console.log('Error data', err);
+		//
+		// 	}
+		// )
 	}
 
-	submitForm() {
+	submitForm(data) {
 		this._$http({
 			method: 'POST',
 			url: this._mockdata,
 			headers: {
+				"content-type": "application/json",
+				"access-control-allow-origin": "*.etrade.com",
+				"cache-control": "no-cache",
 				'Access-Control-Allow-Credentials': true
 			},
 			data: {
@@ -67,6 +99,9 @@ export default class CoveredCall {
 		}).then(
 			(res) => {
 				this._userData = res.data.userdata;
+			},
+			(err) => {
+				console.log('Error: ', err);
 			}
 		)
 	}

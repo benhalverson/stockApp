@@ -8,13 +8,14 @@ class SearchCtrl {
 		console.log('Search Controller log', AppConstants.appName);
 		this.appName = AppConstants.appName;
 		this._CoveredCall = CoveredCall;
+		this._formData = this.formData;
 	}
 
 	submitForm() {
-		this.isSubmitting = true;
+		// this.isSubmitting = true;
 		
-		console.log('Form data: ', this.formData);
-		this._CoveredCall.postData(this.formData)
+		console.log('Form data: ', this._formData);
+		this._CoveredCall.postData(this._formData)
 	}
 }
 

@@ -28,9 +28,11 @@ const requires = [
 
 window.app = angular.module('app', requires);
 
-angular.module('app').constant('AppConstants', constants);
 
 angular.module('app').config(appConfig);
+
+angular.module('app').constant('AppConstants', constants);
+
 
 angular.module('app').run(appRun);
 
