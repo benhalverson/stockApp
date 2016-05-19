@@ -7,12 +7,13 @@ class TableCtrl {
 		'ngInject';
 		this._CoveredCall = CoveredCall;
 		this._mockdata = CoveredCall;
+		this._formData = this.formData;
 	}
 
 	getData () {
-		this._CoveredCall.getJSON().then(res => this.items = res);
-		//console.log('JSON: ', this._CoveredCall.getJSON());
-		// console.log('Mockdata: ', this._mockdata);
+		console.log('clicked')
+		console.log('form data', this._formData);
+		this._CoveredCall.getJSON(); // success
 	}
 
 }

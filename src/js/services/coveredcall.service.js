@@ -9,43 +9,29 @@ export default class CoveredCall {
 		// Object to store coveredcalls
 		this._mockdata= AppConstants.api;
 		// this._$log = $log;
+		this._data = null;
 		this._userData = null;
-		this._obj = {
-			"value": {
-				"stockPriceMin": "10",
-				"stockPriceMax": "20"
-			}
-		}
 
 	}
 
 	//Get data from api
 
-	getJSON() {
+	getJSON(data) {
 
-		var reqData = new Object({
+		var reqData = {
 			"value": {
 				"stockPriceMin": "10",
 				"stockPriceMax": "20"
 			}
-		});
+		};
 
 
 		return this._$http.post(this._mockdata, reqData, {withCredentials: true}, {'Content-Type': 'application/json;charset=UTF-8'}).then(
 			(res) => {
-				// this._$log.debug('data', this);
-				// this.data = res;
-				console.debug(res);
-				console.log('success');
-				//console.log('data from service: ', this.data.data.data.coveredCallScanner);
-				return {};
-				// console.log('res: ', res)
+				this._data = res;
+				this._userData = res.data.userdata;
 			},
 			(err) => {
-				// console.log('Config Object', err.config);
-				console.log('Failed');
-				// console.log('Config Headers', err.config.headers);
-				//console.log('Method', err.config.method);
 				console.log('Error data', err);
 
 			}

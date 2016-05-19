@@ -1,4 +1,27 @@
 <div class="container">
+    <!--filters-->
+    <div class="row">
+        <div class="col-md-12">
+            <form>
+                <input type="text" placeholder="Symbols" ng-model="$ctrl.formData.symbol" />
+                <pre> @debugger
+                {{ $ctrl.formdata }}
+                </pre>
+                <input type="number" placeholder="Strike" ng-model="$ctrl.formdata.strikePrice"/>
+                <input type="number" placeholder="Option Bid Price" ng-model="$ctrl.formdata.optionBid"/>
+                <input type="number" placeholder="Stand Still Return" ng-model="$ctrl.formdata.standStillReturnPercent"/>
+                <input type="number" placeholder="Stock Price (min)" ng-model="$ctrl.formdata.stockPriceMin"/>
+                <input type="number" placeholder="Stock Price (max)" ng-model="$ctrl.formdata.stockPriceMax"/>
+                <input type="number" placeholder="52wk Hi-Lo (min)" ng-model="$ctrl.formdata"/>
+                <input type="number" placeholder="52wk Hi-Low (max)" ng-model="$ctrl.formdata"/>
+                <button class="btn btn-lg btn-primary pull-xs-right"
+                        type="submit" ng-click="$ctrl.getData(this.formData)">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </div>
+    <!--filters   -->
     <div class="row">
         <div class="col-md-12">
             <div class="btn btn-primary" ng-click="$ctrl.getData()">Get data</div>
@@ -22,7 +45,7 @@
                 <th>Industry</th>
             </thead>
             <tbody>
-                <tr ng-repeat="data in $ctrl._CoveredCall._data.data.data.coveredCallScanner.strategyInfoList | limitTo:10 ">
+                <tr ng-repeat="data in $ctrl._CoveredCall._data.data.data.coveredCallScanner.strategyInfoList">
 
 
                     <td ng-bind="::data.symbol | uppercase"></td>
