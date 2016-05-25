@@ -10,86 +10,28 @@ export default class CoveredCall {
 		this._mockdata= AppConstants.api;
 		// this._$log = $log;
 		this._data = null;
-		this._userData = null;
+		this._formData = {};
 
 	}
 
 	//Get data from api
 
-	getJSON(data) {
+	getJSON() {
 
-		var reqData = {
-			"value": {
-				"stockPriceMin": "10",
-				"stockPriceMax": "20"
-			}
-		};
-
-
-		return this._$http.post(this._mockdata, reqData, {withCredentials: true}, {'Content-Type': 'application/json;charset=UTF-8'}).then(
-			(res) => {
-				this._data = res;
-				this._userData = res.data.userdata;
-			},
-			(err) => {
-				console.log('Error data', err);
-
-			}
-		);
-
-
-		// return this._$http({
-		// 	method: 'POST',
-		// 	url: this._mockdata,
-		// 	data: reqData,
-		// 	headers: {
-		// 		// "content-type": "application/x-www-form-urlencoded",
-		// 		// 'Access-Control-Request-Method': 'POST',
-		// 		'Content-Type': 'application/json'
-		// 		//'stk1': 'ssbd3kZzFFcwMbOe8CzIfC9IeXzvtUcvjx32/ZnKf6ahPq8wnmucfyS/vmA6zlkUGRNhbQ=='
-		// 		// "Authorization": "Basic YmhhbHZlcnM6TWFyaW5lODI="
-		// 		// "Access-Control-Allow-Origin": "*.etrade.com",
-		// 	}
-		// }).then(
-		// 	(res) => {
-		// 		// this._$log.debug('data', this);
-		// 		// this.data = res;
-		// 		console.log('data from service: ', this.data.data.data.coveredCallScanner);
-		// 		return {};
-		// 		// console.log('res: ', res)
-		// 	},
-		// 	(err) => {
-		// 		// console.log('Config Object', err.config);
-		// 		console.log('new test');
-		// 		// console.log('Config Headers', err.config.headers);
-		// 		console.log('Method', err.config.method);
-		// 		console.log('Error data', err);
-		//
-		// 	}
-		// )
-	}
-
-	submitForm(data) {
-		this._$http({
+		return this._$http({
 			method: 'POST',
 			url: this._mockdata,
+			data: this._formData,
 			headers: {
-				"content-type": "application/json",
-				"access-control-allow-origin": "*.etrade.com",
-				"cache-control": "no-cache",
-				'Access-Control-Allow-Credentials': true
-			},
-			data: {
-				userdata: data
+				'Content-Type': 'application/json'
 			}
 		}).then(
 			(res) => {
-				this._userData = res.data.userdata;
+				this._data = res;
 			},
 			(err) => {
-				console.log('Error: ', err);
+				console.log('Error data', err);
 			}
 		)
 	}
-
 }
