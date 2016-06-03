@@ -6,8 +6,9 @@ class TableCtrl {
 	constructor(AppConstants, $state, CoveredCall) {
 		'ngInject';
 		this._CoveredCall = CoveredCall;
-		//this._mockdata = CoveredCall;
-		//this._formData = this.formData;
+		console.log('CoveredCall: ', CoveredCall);
+		console.log('this._CoveredCall: ', this._CoveredCall);
+		
 	}
 
 	getData () {

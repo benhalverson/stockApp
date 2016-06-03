@@ -8,20 +8,16 @@ export default class CoveredCall {
 		this._$http = $http;
 		// Object to store coveredcalls
 		this._mockdata= AppConstants.api;
-		// this._$log = $log;
-		this._data = null;
-		this._formData = {};
 
 	}
 
 	//Get data from api
 
-	getJSON() {
-
+	getJSON(formData) {
 		return this._$http({
 			method: 'POST',
 			url: this._mockdata,
-			data: this._formData,
+			data: formData,
 			headers: {
 				'Content-Type': 'application/json'
 			}
