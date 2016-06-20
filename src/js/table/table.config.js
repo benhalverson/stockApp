@@ -6,9 +6,8 @@ function TableConfig($stateProvider) {
 	'ngInject';
 
 	$stateProvider
-		.state('app.table', {
-			url: '/',
-			title: 'Table data',
+		.state('table', {
+			title: 'table',
 			views: {
 				'table': {
 					controller: 'TableCtrl',

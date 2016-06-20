@@ -6,8 +6,9 @@ function SearchConfig($stateProvider) {
 	'ngInject';
 
 	$stateProvider
-		.state('app.search.results', {
-			url: '/search',
+		.state('search', {
+			url: '',
+			title: 'search',
 			views: {
 				'search': {
 					controller: 'SearchCtrl',

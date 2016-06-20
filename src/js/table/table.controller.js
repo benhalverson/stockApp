@@ -14,7 +14,8 @@ class TableCtrl {
 	getData () {
 		console.log('clicked');
 		console.log('form data', this.formData);
-		this._CoveredCall.getJSON(this.formData); // success
+
+
 	}
 
 }
