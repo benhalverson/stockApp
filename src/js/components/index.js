@@ -1,4 +1,3 @@
-'use strict';
 import angular from 'angular';
 
 let componentsModule = angular.module('app.components', []);

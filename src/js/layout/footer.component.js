@@ -1,4 +1,3 @@
-'use strict';
 class AppFooterCtrl {
 	constructor(AppConstants) {
 		'ngInject';

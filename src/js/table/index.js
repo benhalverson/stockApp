@@ -22,4 +22,25 @@ import CoveredCall from '../services/coveredcall.service';
 tableModule.service('CoveredCall', CoveredCall);
 console.log('Table Ctrl imports');
 
-export default tableModule;
+
+
+  import chartDirective from './chart.directive';
+// let chartModule = angular.module('app.charts' , [])
+//  chartModule.directive('mainChart', chartDirective)
+
+import d3 from './d3.module';
+// console.log(d3Service)
+let chartModule = angular.module('app.charts' , ['d3'])
+                         .directive('mainChart' , chartDirective)
+                         // .directive('mainChart' , function (d3Service) {
+                         //     'ngInject'
+                         //   return {
+                         //     scope : {},
+                         //     restrict : 'EA',
+                         //     link : function (scope, el) {
+                         //      console.log(d3Service)
+                         //     }
+                         //   }
+                         // } )
+
+export { tableModule , chartModule};

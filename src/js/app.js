@@ -12,9 +12,9 @@ import 'angular-ui-router';
 import './config/app.templates';
 import './layout';
 import './components';
-import './table';
+import { tableModule, chartModule} from './table';
 import './services';
-import './search';
+import d3 from './table/d3.module';
 
 const requires = [
 	'ui.router',
@@ -22,8 +22,9 @@ const requires = [
 	'app.layout',
 	'app.components',
 	'app.table',
-	'app.search',
-	'app.services'
+	'app.charts',
+	'app.services',
+	'd3'
 ];
 
 window.app = angular.module('app', requires);

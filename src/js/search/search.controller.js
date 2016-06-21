@@ -1,7 +1,6 @@
 /**
  * Created by bhalvers on 5/4/16.
  */
-'use strict';
 class SearchCtrl {
 	constructor(AppConstants, $state, CoveredCall) {
 		'ngInject';

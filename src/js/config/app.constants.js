@@ -1,4 +1,3 @@
-'use strict';
 const AppConstants = {
 	// GETTOKEN: 'https://id.livevol.com:443/connect/token',
 	// api: 'http://dev.etrade.api.livevol.com/v1/market/scans/options/covered-calls',

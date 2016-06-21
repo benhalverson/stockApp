@@ -1,7 +1,6 @@
 /**
  * Created by bhalvers on 5/2/16.
  */
-'use strict';
 function TableConfig($stateProvider) {
 	'ngInject';
 
