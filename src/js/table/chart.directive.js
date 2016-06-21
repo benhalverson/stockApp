@@ -1,11 +1,7 @@
 let chartDirective = function () {
     function controllerFn (d3Service) {
         'ngInject'
-        //code goes here
-
-
-
-
+        
         console.log(d3Service)
     }
 

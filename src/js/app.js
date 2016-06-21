@@ -2,7 +2,6 @@
  * Created by bhalvers on 5/1/16.
  */
 import angular from 'angular';
-import d3 from 'd3';
 // import config files
 import constants from './config/app.constants';
 import appConfig from './config/app.config';
@@ -27,7 +26,7 @@ const requires = [
 	'app.table',
 	'app.charts',
 	'app.services',
-	'd3'
+	// 'app.search'
 ];
 
 window.app = angular.module('app', requires);
