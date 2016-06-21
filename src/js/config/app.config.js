@@ -10,8 +10,23 @@ function AppConfig($httpProvider, $stateProvider, $locationProvider, $urlRouterP
 
 	$stateProvider
 		.state('app', {
-			abstract: true,
+			// abstract: true
+			url : '/',
 			templateUrl: 'layout/app-view.html'
+			// views: {
+			// 	'one': {
+			// 		template : 'helloooooooo'
+			// 		// controller: 'SearchCtrl',
+			// 		// controllerAs: '$ctrl',
+			// 		// templateUrl: 'search/search.html'
+			// 	},
+			// 	'two' : {
+			// 		template : 'thereeee'
+			// 		// controller: 'TableCtrl',
+			// 		// controllerAs: '$ctrl',
+			// 		// templateUrl: 'table/table.html'
+			// 	}
+			
 		});
 	$urlRouterProvider.otherwise('/')
 }

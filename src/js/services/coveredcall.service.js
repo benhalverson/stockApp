@@ -1,33 +1,42 @@
 /**
  * Created by bhalvers on 5/2/16.
  */
+
+
+import data from './data';
+import AppConstants from '../config/app.constants';
 export default class CoveredCall {
 	constructor(AppConstants, $http, $state, $q) {
 		'ngInject';
-
+        this.AppConstants = AppConstants
 		this._$http = $http;
 		// Object to store coveredcalls
-		this._mockdata= AppConstants.api;
 
 	}
-
+	doAThing () {console.log('hi')}
 	//Get data from api
 
-	getJSON(formData) {
-		return this._$http({
-			method: 'POST',
-			url: this._mockdata,
-			data: formData,
-			headers: {
-				'Content-Type': 'application/json'
-			}
-		}).then(
-			(res) => {
-				this._data = res;
-			},
-			(err) => {
-				console.log('Error data', err);
-			}
-		)
+	getJSON() {
+
+		return data
+
+
+
+		// return this._$http({
+		// 	method: 'POST',
+		// 	url: this._mockdata,
+		// 	data: formData,
+		// 	headers: {
+		// 		'Content-Type': 'application/json'
+		// 	}
+		// }).then(
+		// 	(res) => {
+		// 		this._data = res;
+		// 	},
+		// 	(err) => {
+		// 		console.log('Error data', err);
+		// 	}
+		// )
 	}
 }
+

@@ -9,7 +9,9 @@ const AppConstants = {
 	// api: 'http://localhost:4000/data/CoveredCallScanner.json'
 	//api:'https://us.sit.etrade.com/webapiusr/alerts/alertinbox/ACCOUNT.json'
 	//api: 'https://dit65w220m7.etrade.com/webapiusr/alerts/alertinbox/ACCOUNT.json'
-	api: 'http://localhost:3000/api/coveredcall'
+	api: 'http://localhost:3000/api/coveredcall',
+	DOMElementSelector: '#main-chart',
+	d3Url : 'node_modules/d3/d3.min.js'
 };
 
 export default AppConstants;

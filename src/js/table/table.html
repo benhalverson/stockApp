@@ -1,6 +1,24 @@
 <div class="container">
     <!--filters-->
+<!--<<<<<<< HEAD-->
 <main-chart></main-chart>
+<!--=======-->
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="error-messages" ng-show="$ctrl.errors">
+                <div ng-repeat="(field, errors) in $ctrl.errors">
+                    <li ng-repeat="error in errors">
+                        {{field}} {{error}}
+                    </li>
+                </div>
+            </ul>
+
+                <pre>
+                {{ $ctrl.formData }}
+                 </pre>
+        </div>
+    </div>
+<!--&gt;>>>>>> 55a98b12db20c51f24e8724c232b97e4a4c50674-->
     <!--filters   -->
     <div class="row">
         <div class="col-md-12">
@@ -45,8 +63,11 @@
             </tbody>
         </table>
 
+
+
     </div>
 
+    <!--<main-chart></main-chart>-->
 
     <!--<pre>-->
         <!--{{ $ctrl._CoveredCall._data.data.data.coveredCallScanner.strategyInfoList | json }}-->
