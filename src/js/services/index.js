@@ -4,9 +4,9 @@ let servicesModule = angular.module('app.services', []);
 // let neoModule = angular.module('app.neoservice', []);
 
 // Services
-import CoveredCall from './coveredcall.service';
+import DataService from './coveredcall.service';
 // import NeoResource from './neoservices';
 console.log('log message from service file');
-servicesModule.service('CoveredCall', CoveredCall);
+servicesModule.service('DataService', DataService);
 // neoModule.service('neoservice', NeoResource);
 export default servicesModule;

@@ -1,14 +1,14 @@
 /**
  * Created by bhalvers on 5/2/16.
  */
-export default class CoveredCall {
+export default class DataService {
 	constructor(AppConstants, $http, $state, $q) {
 		'ngInject';
 
 		this._$http = $http;
 		// Object to store coveredcalls
 		this._mockdata= AppConstants.api;
-
+		this.data = [ 1,2,3,4];
 	}
 
 	//Get data from api

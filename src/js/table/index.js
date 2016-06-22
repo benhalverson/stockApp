@@ -18,7 +18,7 @@ console.log('Table Ctrl imports');
 
 import ChartDirective from './chart.directive'
 
-let chartModule = angular.module('app.charts' , ['d3'])
+let chartModule = angular.module('app.charts' , ['d3', 'app.services'])
 							.directive('mainChart' , ChartDirective);
 
 export default {tableModule , chartModule};
