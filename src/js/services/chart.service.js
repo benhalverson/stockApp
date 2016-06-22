@@ -18,19 +18,19 @@ export default function ChartService(d3Service, DataService) {
 			.data(DataService.data)
 			.enter()
 			.append('rect')
-			.transition().ease('elastic')
-			.attr('width', function(d, i) {
-				console.log('d',d);
-				return d * chartParams.barWidthIncrement
-			})
+			.attr('width', 0)
 			.attr('height', 50)
 			.attr('y', function (d, i){
 				return 	50 + (i * (chartParams.barHeight + chartParams.marginTop) );
 			})
 			.attr('x', 0)
-			.attr('fill', 'blue');
-		console.log('Show me the data: ', bars);
-	}
+			.attr('fill', 'blue')
+			.transition()
+			.duration(3000)
+			.attr('width', function(d) {
+				return d * chartParams.barWidthIncrement;
+			});
+		}
 	}
 
 // export default class ChartService {
