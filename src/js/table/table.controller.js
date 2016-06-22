@@ -3,11 +3,12 @@
  */
 'use strict';
 class TableCtrl {
-	constructor(AppConstants, $state, CoveredCall) {
+	constructor(AppConstants, $state, CoveredCall, DataService) {
 		'ngInject';
 		this._CoveredCall = CoveredCall;
 		console.log('CoveredCall: ', CoveredCall);
 		console.log('this._CoveredCall: ', this._CoveredCall);
+		this.chartData = DataService.data;
 		
 	}
 
@@ -16,6 +17,8 @@ class TableCtrl {
 		console.log('form data', this.formData);
 		this._CoveredCall.getJSON(this.formData); // success
 	}
+
+	
 
 }
 export default TableCtrl;

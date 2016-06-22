@@ -13,14 +13,24 @@ let ChartDirective = function (d3Service, ChartService) {
 			var chartElement = d3.select(el[0]).append('svg')
 				.attr('width', 700)
 				.attr('height', 700);
-			ChartService.render(chartElement);
+			
+		scope.$watch(function() {
+
+			return scope.data
+		}, function(newValue, oldValue){
+			ChartService.render(chartElement , newValue);
+			console.log('old', newValue, oldValue);
+			
+
+		});
+
 
 	}
 
 	LinkFn.$inject = ['d3Service', 'ChartService'];
 	controllerFn.$inject = ['d3Service'];
 	return {
-		scope : {} ,
+		scope : {data:'='} ,
 		restrict : 'EA' ,
 		template: 'hi!!!!!' ,
 		link : LinkFn,

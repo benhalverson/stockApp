@@ -3,7 +3,7 @@
 	
 export default function ChartService(d3Service, DataService) {
 	'ngInject';
-	this.render = function(el) {
+	this.render = function(el, data) {
 		var chartParams = {
 			width : 500,
 			height : 500,
@@ -15,7 +15,7 @@ export default function ChartService(d3Service, DataService) {
 
 		var bars = el
 			.selectAll('rect')
-			.data(DataService.data)
+			.data(data)
 			.enter()
 			.append('rect')
 			.attr('width', 0)
