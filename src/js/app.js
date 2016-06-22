@@ -14,15 +14,16 @@ import './layout';
 import './components';
 import './table';
 import './services';
-import './search';
+import './table/d3.module'
 
 const requires = [
+	'd3',
 	'ui.router',
 	'templates',
 	'app.layout',
 	'app.components',
 	'app.table',
-	'app.search',
+	'app.charts',
 	'app.services'
 ];
 

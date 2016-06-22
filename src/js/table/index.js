@@ -4,13 +4,7 @@
 import angular from 'angular';
 
 let tableModule = angular.module('app.table', []);
-let searchModule = angular.module('app.search', []);
 
-import SearchCtrl from '../search/search.controller';
-searchModule.controller('SearchCtrl', SearchCtrl);
-
-import SearchConfig from '../search/search.config';
-searchModule.config(SearchConfig);
 
 import TableConfig from './table.config';
 tableModule.config(TableConfig);
@@ -22,4 +16,9 @@ import CoveredCall from '../services/coveredcall.service';
 tableModule.service('CoveredCall', CoveredCall);
 console.log('Table Ctrl imports');
 
-export default tableModule;
+import ChartDirective from './chart.directive'
+
+let chartModule = angular.module('app.charts' , ['d3'])
+							.directive('mainChart' , ChartDirective);
+
+export default {tableModule , chartModule};
