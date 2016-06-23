@@ -20,7 +20,7 @@ export default function ChartService() {
 			.data(data)
 			.enter()
 			.append('rect')
-			.attr('width', 0)
+			.attr('width', 1)
 			.attr('height', 50)
 			.attr('y', function (d, i){
 				return 	50 + (i * (chartParams.barHeight + chartParams.marginTop) );
@@ -30,6 +30,9 @@ export default function ChartService() {
 			.transition()
 			.duration(3000)
 			.attr('width', function(d) {
+				if(!(d * chartParams.barWidthIncrement)){
+					console.log(d)
+				}
 				return d * chartParams.barWidthIncrement;
 			});
 		}

@@ -18,9 +18,13 @@ let ChartDirective = function (d3Service, ChartService) {
 
 			return scope.data
 		}, function(newValue, oldValue){
-			ChartService.render(chartElement , newValue);
-			console.log('old', newValue, oldValue);
-			
+			if (newValue.length){
+				console.log('old', newValue, oldValue);
+
+				ChartService.render(chartElement , newValue.replace('[', '').replace(']', '').split(','));
+
+			}
+
 
 		});
 
