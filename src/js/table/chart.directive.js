@@ -30,7 +30,7 @@ let ChartDirective = function (d3Service, ChartService) {
 	LinkFn.$inject = ['d3Service', 'ChartService'];
 	controllerFn.$inject = ['d3Service'];
 	return {
-		scope : {data:'='} ,
+		scope : {data:'@'} ,
 		restrict : 'EA' ,
 		template: 'hi!!!!!' ,
 		link : LinkFn,

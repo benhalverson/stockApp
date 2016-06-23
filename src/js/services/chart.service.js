@@ -1,7 +1,8 @@
 
 
 	
-export default function ChartService(d3Service, DataService) {
+//noinspection BadExpressionStatementJS
+export default function ChartService() {
 	'ngInject';
 	this.render = function(el, data) {
 		var chartParams = {
@@ -10,9 +11,10 @@ export default function ChartService(d3Service, DataService) {
 			marginTop : 20,
 			barHeight : 50,
 			barWidthIncrement : 100
-		}
-		var d3 = d3Service;
+		};
 
+
+		//noinspection JSUnusedLocalSymbols
 		var bars = el
 			.selectAll('rect')
 			.data(data)
