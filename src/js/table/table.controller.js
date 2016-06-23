@@ -19,14 +19,7 @@ class TableCtrl {
 		this._CoveredCall.getJSON(this.formData); // success
 	}
 
-	submitData () {
-		if(typeof +this.newData =='number') {
-			this.chartData.push(+this.newData)
-			console.log('new data', this.newData)
-			console.log('this.chartdata', this.chartData);
-		}
 
-	}
 
 
 }
