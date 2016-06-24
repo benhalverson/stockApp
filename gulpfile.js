@@ -39,7 +39,8 @@ gulp.task('browserify', ['views'], function() {
 		//Pass desired output filename to vinyl-source-stream
 		.pipe(source('./build/main.js'))
 		.pipe(buffer())
-		.pipe(sourcemaps.init({ loadMaps: true })) // create sourcemap before running edit commands so we know which file to reference
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(uglify())// create sourcemap before running edit commands so we know which file to reference
 		.pipe(rename("main.js")) // rename file
 		.pipe(sourcemaps.write('./', {sourceRoot: './'})) // sourcemap gets written and references wherever sourceRoot is specified to be
 		.pipe(gulp.dest('./build'));
@@ -61,19 +62,7 @@ gulp.task('views', function() {
 		.pipe(gulp.dest('./src/js/config/'));
 });
 
-// This task is used for building production ready
-// minified JS/CSS files into the dist/ folder
-gulp.task('build', ['html', 'browserify'], function() {
-	var html = gulp.src("build/index.html")
-		.pipe(gulp.dest('./dist/'));
 
-	var js = gulp.src("build/main.js")
-		.pipe(uglify())
-		.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(gulp.dest('./dist/'))
-		.pipe(sourcemaps.write('./dist'));
-	return merge(html,js);
-});
 
 gulp.task('default', ['html', 'browserify'], function() {
 

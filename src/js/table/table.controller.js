@@ -7,7 +7,7 @@ class TableCtrl {
 		'ngInject';
 		this._CoveredCall = CoveredCall;
 		console.log('CoveredCallsss: ', CoveredCall);
-		console.log('this._CoveredCallaaaaff: ', this._CoveredCall);
+		console.log('this._CoveredCall: ', this._CoveredCall);
 	}
 
 	getData () {
