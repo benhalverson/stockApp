@@ -37,15 +37,12 @@ gulp.task('browserify', ['views'], function() {
 		.bundle()
 		.on('error', interceptErrors)
 		//Pass desired output filename to vinyl-source-stream
-		.pipe(source('main.js'))
+		.pipe(source('./build/main.js'))
 		.pipe(buffer())
-		.pipe(sourcemaps.init(
-			{   loadMaps: true,
-				sourceRoot: '/src'
-			}))
-		// Start piping stream to tasks!
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest('./build/'));
+		.pipe(sourcemaps.init({ loadMaps: true })) // create sourcemap before running edit commands so we know which file to reference
+		.pipe(rename("main.js")) // rename file
+		.pipe(sourcemaps.write('./', {sourceRoot: './'})) // sourcemap gets written and references wherever sourceRoot is specified to be
+		.pipe(gulp.dest('./build'));
 });
 
 gulp.task('html', function() {
