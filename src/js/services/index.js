@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-let servicesModule = angular.module('app.services', []);
+let servicesModule = angular.module('app.services', ['et.shared.neoServices']);
 // let neoModule = angular.module('app.neoservice', []);
 
 // Services

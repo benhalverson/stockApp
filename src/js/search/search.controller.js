@@ -5,17 +5,16 @@
 class SearchCtrl {
 	constructor(AppConstants, $state, CoveredCall) {
 		'ngInject';
-		console.log('Search Controller log', AppConstants.appName);
+		console.log('Search Controller asdfasdfasdfa', AppConstants.appName);
 		this.appName = AppConstants.appName;
 		this._CoveredCall = CoveredCall;
 		this._formData = this.formData;
 	}
 
-	submitForm() {
-		// this.isSubmitting = true;
-		
-		console.log('Form data: ', this._formData);
-		this._CoveredCall.postData(this._formData)
+	getData (data) {
+		console.log('clicked');
+		console.log('form data', this.formData);
+		this._CoveredCall.neoJSON('http://lxdm1239m7.etrade.com:8443/webapiopt/optionAnalytics/ot/coveredCallScanner.json', data); // success
 	}
 }
 

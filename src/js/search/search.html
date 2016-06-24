@@ -1,18 +1,32 @@
-<div class="row">
-    <div class="col-md-12">
-        <form>
-            <input type="text" placeholder="Symbols" ng-model="$ctrl.formData.symbol" />
-            <input type="number" placeholder="Strike" ng-model="$ctrl.formdata.strikePrice"/>
-            <input type="number" placeholder="Option Bid Price" ng-model="$ctrl.formdata.optionBid"/>
-            <input type="number" placeholder="Stand Still Return" ng-model="$ctrl.formdata.standStillReturnPercent"/>
-            <input type="number" placeholder="Stock Price (min)" ng-model="$ctrl.formdata.stockPriceMin"/>
-            <input type="number" placeholder="Stock Price (max)" ng-model="$ctrl.formdata.stockPriceMax"/>
-            <input type="number" placeholder="52wk Hi-Lo (min)" ng-model="$ctrl.formdata"/>
-            <input type="number" placeholder="52wk Hi-Low (max)" ng-model="$ctrl.formdata"/>
-            <button class="btn btn-lg btn-primary pull-xs-right"
-                    type="submit" ng-click="$ctrl.submitForm()">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="error-messages" ng-show="$Searchctrl.errors">
+                <div ng-repeat="(field, errors) in $Searchctrl.errors">
+                    <li ng-repeat="error in errors">
+                        {{field}} {{error}}
+                    </li>
+                </div>
+            </ul>
+            <form>
+                <input type="text" placeholder="Symbols" ng-model="$Searchctrl.formData.symbol" />
+                <input type="text" placeholder="Strike" ng-model="$Searchctrl.formData.strikePrice"/>
+                <input type="text" placeholder="Option Bid Price" ng-model="$Searchctrl.formData.optionBid"/>
+                <input type="text" placeholder="Stand Still Return" ng-model="$Searchctrl.formData.standStillReturnPercent"/>
+                <input type="text" placeholder="Stock Price (min)" ng-model="$Searchctrl.formData.stockPriceMin"/>
+                <input type="text" placeholder="Stock Price (max)" ng-model="$Searchctrl.formData.stockPriceMax"/>
+                <input type="text" placeholder="52wk Hi-Low (min)" ng-model="$Searchctrl.formData.hiLoPercent52Week"/>
+                <input type="text" placeholder="52wk Hi-Low (max)" ng-model="$Searchctrl.formData.wkLoMax"/>
+                <button class="btn btn-lg btn-primary pull-xs-right"
+                        type="submit" ng-click="$Searchctrl.getData($Searchctrl.formData)">
                     Submit
-            </button>
-        </form>
+                </button>
+
+            </form>
+                <pre>
+                    @debug
+                {{ $Searchctrl.formData }}
+                 </pre>
+        </div>
     </div>
 </div>

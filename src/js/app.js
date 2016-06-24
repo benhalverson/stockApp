@@ -12,7 +12,8 @@ import 'angular-ui-router';
 import './config/app.templates';
 import './layout';
 import './components';
-import './table';
+import './services/neoservice'
+// import './table';
 import './services';
 import './search';
 
@@ -21,9 +22,10 @@ const requires = [
 	'templates',
 	'app.layout',
 	'app.components',
-	'app.table',
+	// 'app.table',
 	'app.search',
-	'app.services'
+	'app.services',
+	'et.shared.neoServices'
 ];
 
 window.app = angular.module('app', requires);
