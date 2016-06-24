@@ -7,8 +7,8 @@ export default class CoveredCall {
 
 		this._$http = $http;
 		// Object to store coveredcalls
-		this._mockdata= AppConstants.api;
-
+		// this._mockdata= AppConstants.api;
+			
 	}
 
 	//Get data from api

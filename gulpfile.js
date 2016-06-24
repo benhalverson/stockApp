@@ -1,6 +1,7 @@
 var gulp          = require('gulp');
 var notify        = require('gulp-notify');
 var source        = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var browserify    = require('browserify');
 var babelify      = require('babelify');
 var ngAnnotate    = require('browserify-ngannotate');
@@ -37,10 +38,14 @@ gulp.task('browserify', ['views'], function() {
 		.on('error', interceptErrors)
 		//Pass desired output filename to vinyl-source-stream
 		.pipe(source('main.js'))
-		// .pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(buffer())
+		.pipe(sourcemaps.init(
+			{   loadMaps: true,
+				sourceRoot: '/src'
+			}))
 		// Start piping stream to tasks!
-		.pipe(gulp.dest('./build/'))
-		// .pipe(sourcemaps.write('./build/'));
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('./build/'));
 });
 
 gulp.task('html', function() {
