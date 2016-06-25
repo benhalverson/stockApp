@@ -1,6 +1,7 @@
 var gulp          = require('gulp');
 var notify        = require('gulp-notify');
 var source        = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var browserify    = require('browserify');
 var babelify      = require('babelify');
 var ngAnnotate    = require('browserify-ngannotate');
@@ -30,17 +31,19 @@ var interceptErrors = function(error) {
 
 
 gulp.task('browserify', ['views'], function() {
-	return browserify('./src/js/app.js')
+	return browserify({entries : './src/js/app.js' , debug : true})
 		.transform(babelify, {presets: ["es2015"]})
 		.transform(ngAnnotate)
 		.bundle()
 		.on('error', interceptErrors)
 		//Pass desired output filename to vinyl-source-stream
-		.pipe(source('main.js'))
-		// .pipe(sourcemaps.init({loadMaps: true}))
-		// Start piping stream to tasks!
-		.pipe(gulp.dest('./build/'))
-		// .pipe(sourcemaps.write('./build/'));
+		.pipe(source('./build/main.js'))
+		.pipe(buffer())
+		.pipe(sourcemaps.init({ loadMaps: true }))
+		.pipe(uglify())// create sourcemap before running edit commands so we know which file to reference
+		.pipe(rename("main.js")) // rename file
+		.pipe(sourcemaps.write('./', {sourceRoot: './'})) // sourcemap gets written and references wherever sourceRoot is specified to be
+		.pipe(gulp.dest('./build'));
 });
 
 gulp.task('html', function() {
@@ -59,19 +62,7 @@ gulp.task('views', function() {
 		.pipe(gulp.dest('./src/js/config/'));
 });
 
-// This task is used for building production ready
-// minified JS/CSS files into the dist/ folder
-gulp.task('build', ['html', 'browserify'], function() {
-	var html = gulp.src("build/index.html")
-		.pipe(gulp.dest('./dist/'));
 
-	var js = gulp.src("build/main.js")
-		.pipe(uglify())
-		.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(gulp.dest('./dist/'))
-		.pipe(sourcemaps.write('./dist'));
-	return merge(html,js);
-});
 
 gulp.task('default', ['html', 'browserify'], function() {
 
