@@ -4,16 +4,21 @@
     var map = {
         'app': 'app', // 'dist',
         'rxjs': 'lib/rxjs',
-        '@angular': 'lib/@angular'
+        '@angular': 'lib/@angular',
+        'angular': 'lib/angular',
+        'uiRouter': '/lib/angular-ui-router/release'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
     var packages = {
         'app': {main: 'main.js', defaultExtension: 'js'},
-        'rxjs': {defaultExtension: 'js'}
+        'rxjs': {defaultExtension: 'js'},
+        'angular': {main: "index.js"},
+        'uiRouter' : {main: 'angular-ui-router.min.js'}
     };
 
     var packageNames = [
+
         '@angular/common',
         '@angular/compiler',
         '@angular/core',
