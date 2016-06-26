@@ -9,13 +9,17 @@ import {UpgradeAdapter} from '@angular/upgrade';
 
 angular.module( 'myApp' , ['ui.router'] )
     .controller( 'appCtrl' , function ( $scope , $element , $state ) {
-        console.log( $state );
+        $scope.tabs = [
+            {name: "Covered Call Backtester"},
+            {name: "Secured Put Backtester"},
+            {name: "Options Screener"}
+        ];
     })
     .controller('backtester' , function ($state) {
         console.log($state.params);
     })
     .controller('screener' , function (){
-        console.log('screener!!!!');
+        console.log('screener!!!!' );
     })
     .config( function ( $stateProvider , $urlRouterProvider ) {
         $stateProvider

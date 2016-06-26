@@ -1,0 +1,23 @@
+
+
+.app-container{
+  height: 720px;
+  width: 1020px;
+}
+
+@mixin centerHorizontal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.tab {
+  color: blue;
+  display : inline-block;
+}
+
+.nav{
+  margin:0 auto;
+  @include centerHorizontal;
+  top: 20%
+}
+

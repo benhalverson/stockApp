@@ -1,6 +1,10 @@
-<section>
-    <nav>
-        hiiiii
-        <ui-view></ui-view>
-    </nav>
-</section>
+<div class="app-container">
+    <div class="nav">
+        <div class="tab" ng-repeat="tab in tabs">
+            <span class="tab-name">{{tab.name}}</span>
+        </div>
+    </div>
+    <br>
+    <ui-view></ui-view>
+
+</div>
