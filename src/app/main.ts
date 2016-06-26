@@ -1,26 +1,41 @@
-/* Avoid: 'error TS2304: Cannot find name <type>' during compilation */
 ///<reference path="../../typings/index.d.ts"/>
 
 
-import 'angular';
+import angular from  'angular';
 import 'uiRouter';
 import {UpgradeAdapter} from '@angular/upgrade';
 
 
 
-angular.module('myApp' , ['ui.router'])
-    .controller('appCtrl' , function ($scope , $element , $state) {
-        console.log($state);
+angular.module( 'myApp' , ['ui.router'] )
+    .controller( 'appCtrl' , function ( $scope , $element , $state ) {
+        console.log( $state );
     })
-    .config(function ($stateProvider , $urlRouterProvider) {
+    .controller('backtester' , function ($state) {
+        console.log($state.params);
+    })
+    .controller('screener' , function (){
+        console.log('screener!!!!');
+    })
+    .config( function ( $stateProvider , $urlRouterProvider ) {
         $stateProvider
-            .state('home' , {
-                url : '/',
-                controller : 'appCtrl',
-                template: '<div></div>'
+            .state( 'optionsIncomeTool' , {
+                url          : '/livevol' ,
+                controller   : 'appCtrl' ,
+                templateUrl  : 'app.html',
+                abstract     : true
+            })
+            .state('optionsIncomeTool.backtester' , {
+                url : '/backtester/:type',
+                controller : 'backtester',
+                templateUrl: 'backtester.html'
+            })
+            .state('optionsIncomeTool.screener' , {
+                url : '/screener/:type',
+                controller : 'screener',
+                templateUrl: 'screener.html'
             });
-
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/livevol/screener/call');
     });
 var adapter = new UpgradeAdapter();
 
