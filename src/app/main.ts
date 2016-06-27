@@ -3,7 +3,6 @@
 
 import angular from  'angular';
 import 'uiRouter';
-import {UpgradeAdapter} from '@angular/upgrade';
 
 import adapter from 'app/adapter';
 
@@ -16,10 +15,10 @@ import BacktesterCtrl from 'app/backtester/backtester.controller';
 
 
 angular.module( 'myApp' , ['ui.router'] )
-    .controller( 'appCtrl' , AppCtrl )
-    .controller('BacktestCtrl' , BacktesterCtrl)
-    .controller('ScreenerCtrl' , ScreenerCtrl )
-    .config( AppConfig );
+       .controller( 'appCtrl' , AppCtrl )
+       .controller('BacktestCtrl' , BacktesterCtrl)
+       .controller('ScreenerCtrl' , ScreenerCtrl )
+       .config( AppConfig );
 
 
 
