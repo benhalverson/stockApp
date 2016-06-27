@@ -5,6 +5,7 @@ import angular from  'angular';
 import 'uiRouter';
 import {UpgradeAdapter} from '@angular/upgrade';
 
+import adapter from 'app/adapter';
 
 import AppCtrl from 'app/app.controller';
 import AppConfig from 'app/app.config';
@@ -19,7 +20,8 @@ angular.module( 'myApp' , ['ui.router'] )
     .controller('BacktestCtrl' , BacktesterCtrl)
     .controller('ScreenerCtrl' , ScreenerCtrl )
     .config( AppConfig );
-var adapter = new UpgradeAdapter();
+
+
 
 adapter.bootstrap(document.body , ['myApp' , 'ui.router']);
 

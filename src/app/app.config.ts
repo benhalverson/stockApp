@@ -14,13 +14,13 @@ let AppConfig = function ( $stateProvider , $urlRouterProvider ) {
         .state('optionsIncomeTool.backtester' , {
             url : '/backtester/{type}',
             controller : BacktesterCtrl,
-            templateUrl: 'backtester.html'
+            templateUrl: 'app/backtester/backtester.html'
 
         })
         .state('optionsIncomeTool.screener' , {
             url : '/screener/{type}',
             controller : ScreenerCtrl,
-            templateUrl: 'screener.html'
+            templateUrl: 'app/screener/screener.html'
         });
     $urlRouterProvider.otherwise('/livevol/backtester/call');
 };
