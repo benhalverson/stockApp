@@ -8,18 +8,29 @@ import {UpgradeAdapter} from '@angular/upgrade';
 
 
 angular.module( 'myApp' , ['ui.router'] )
-    .controller( 'appCtrl' , function ( $scope , $element , $state ) {
-        $scope.tabs = [
-            {name: "Covered Call Backtester"},
-            {name: "Secured Put Backtester"},
-            {name: "Options Screener"}
-        ];
-    })
+    .controller( 'appCtrl' , function ( $scope , $state) {
+                $scope.tabs = [
+                    {name: "Covered Call Backtester",  url : 'call' , active: false},
+                    {name: "Secured Put Backtester",  url : 'put' , active: false},
+                    {name: "Options Screener" ,  url : 'call', active: true}
+                ];
+                $scope.go = function (tab) {
+                    $scope.tabs.forEach( function (navTab) {
+                        if  ( tab.name === navTab.name ) {
+                            navTab.active = true;
+                        } else {
+                            navTab.active = false;
+                        }
+                    });
+                    $state.go('optionsIncomeTool.backtester' , { type : tab.url});
+                };
+        })
     .controller('backtester' , function ($state) {
         console.log($state.params);
     })
-    .controller('screener' , function (){
-        console.log('screener!!!!' );
+    .controller('screener' , function ($scope){
+            console.log($scope.tabs);
+
     })
     .config( function ( $stateProvider , $urlRouterProvider ) {
         $stateProvider
@@ -33,9 +44,10 @@ angular.module( 'myApp' , ['ui.router'] )
                 url : '/backtester/:type',
                 controller : 'backtester',
                 templateUrl: 'backtester.html'
+
             })
             .state('optionsIncomeTool.screener' , {
-                url : '/screener/:type',
+                url : '/screener/{type}',
                 controller : 'screener',
                 templateUrl: 'screener.html'
             });
