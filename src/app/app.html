@@ -1,0 +1,16 @@
+<div class="app-container">
+    <div class="nav">
+        <div ng-click="go(tab)"
+             ng-class="{'active' : tab.active }"
+             ng-repeat="tab in tabs"
+             class="tab">
+
+
+            <span class="tab-name">{{tab.name}}</span>
+        </div>
+    </div>
+    <br>
+
+    <ui-view></ui-view>
+
+</div>

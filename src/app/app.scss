@@ -10,18 +10,23 @@
   left: 50%;
   transform: translate(-50%,-50%)
 }
+
+
+
 .tab {
   color: black;
   background-color: grey;
   border: 1px solid black;
   width: 33%;
-  height: 5%;
+  height: 35%;
   display : inline-block;
   text-align: center;
 }
 
 .tab-name{
-
+  position: absolute;
+  transform: translate(-50%,-25%);
+  top: 15%;
 }
 
 .active{
@@ -32,6 +37,7 @@
   margin:0 auto;
   top: 20%;
   @include centerHorizontal;
-  width: 60%
+  width: 60%;
+  height: 20%;
 }
 
